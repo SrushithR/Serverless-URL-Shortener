@@ -1,0 +1,23 @@
+{
+  "TableName": "ShotenerTest",
+  "ConditionExpression": "attribute_not_exists(id)",
+  "Key": {
+    "id": {
+      "S": $input.json('$.id')
+    }
+  },
+  "ExpressionAttributeNames": {
+    "#u": "url",
+    "#o": "owner"
+  },
+  "ExpressionAttributeValues": {
+    ":u": {
+      "S": $input.json('$.url')
+    },
+    ":o": {
+      "S":  $input.json('$.owner')
+    }
+  },
+  "UpdateExpression": "SET #u = :u, #o = :o",
+  "ReturnValues": "ALL_NEW"
+}

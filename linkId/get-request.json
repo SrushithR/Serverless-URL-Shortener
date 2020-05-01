@@ -1,0 +1,8 @@
+{
+  "Key": {
+    "id": {
+      "S": "$input.params().path.linkid"
+    }
+  },
+  "TableName": "ShotenerTest"
+}

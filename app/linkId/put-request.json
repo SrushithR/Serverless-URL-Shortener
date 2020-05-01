@@ -1,0 +1,27 @@
+{
+    "TableName": "ShotenerTest",
+    "Key": {
+        "id": {
+            "S": $input.json('$.id')
+        }
+    },
+    "ExpressionAttributeNames": {
+        "#u": "url",
+        "#owner": "owner",
+        "#id": "id"
+    },
+    "ExpressionAttributeValues": {
+        ":u": {
+            "S": $input.json('$.url')
+        },
+        ":owner": {
+            "S": $input.json('$.owner')
+        },
+        ":linkId": {
+            "S": "$input.params().path.linkId"
+        }
+    },
+    "UpdateExpression": "SET #u = :u",
+    "ReturnValues": "ALL_NEW",
+    "ConditionExpression": "#owner = :owner AND #id = :linkId"
+}

@@ -1,0 +1,17 @@
+{
+  "Key": {
+    "id": {
+      "S": "$input.params().path.linkId"
+    }
+  },
+  "TableName": "ShotenerTest",
+  "ConditionExpression": "#owner = :owner",
+  "ExpressionAttributeValues": {
+    ":owner": {
+      "S": $input.json('$.owner')
+    }
+  },
+  "ExpressionAttributeNames": {
+    "#owner": "owner"
+  }
+}
