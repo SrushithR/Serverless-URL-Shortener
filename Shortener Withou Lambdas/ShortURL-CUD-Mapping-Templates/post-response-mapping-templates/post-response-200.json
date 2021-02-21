@@ -1,0 +1,6 @@
+#set($DDBResponse = $input.path('$'))
+{
+    "id": "$DDBResponse.Attributes.id.S",
+    "url": "$DDBResponse.Attributes.url.S",
+    "owner": "$DDBResponse.Attributes.owner.S"
+}

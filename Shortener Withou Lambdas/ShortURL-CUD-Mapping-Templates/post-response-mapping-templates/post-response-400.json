@@ -1,0 +1,8 @@
+#set($DDBResponse = $input.path('$'))
+#if($DDBResponse.toString().contains("ConditionalCheckFailedException"))
+#set($context.responseOverride.status = 200)
+{
+    "error": true,
+    "message": "URL link already exists"
+}
+#end
