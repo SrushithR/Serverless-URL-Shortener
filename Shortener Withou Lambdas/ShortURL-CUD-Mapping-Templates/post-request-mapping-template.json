@@ -1,18 +1,18 @@
 {
-  "TableName": "ShotenerTest",
+  "TableName": "URL-Shortener",
   "ConditionExpression": "attribute_not_exists(id)",
   "Key": {
-    "id": {
-      "S": $input.json('$.id')
+    "shortId": {
+      "S": $input.json('$.shortURL')
     }
   },
   "ExpressionAttributeNames": {
-    "#u": "url",
+    "#u": "longURL",
     "#o": "owner"
   },
   "ExpressionAttributeValues": {
     ":u": {
-      "S": $input.json('$.url')
+      "S": $input.json('$.longURL')
     },
     ":o": {
       "S":  $input.json('$.owner')

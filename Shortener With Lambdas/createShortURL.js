@@ -6,7 +6,7 @@ exports.handler = (event, context, callback) => {
   const { shortURL, longURL } = event;
   return dynamodb
     .putItem({
-      TableName: "shortener",
+      TableName: "URL-Shortener",
       Item: {
         shortId: { S: shortURL },
         longURL: { S: longURL },
