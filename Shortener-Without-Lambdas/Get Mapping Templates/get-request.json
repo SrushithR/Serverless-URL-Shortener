@@ -1,8 +1,8 @@
 {
   "Key": {
-    "id": {
-      "S": "$input.params().path.linkid"
+    "shortId": {
+      "S": "$input.params().path.shortId"
     }
   },
-  "TableName": "ShotenerTest"
+  "TableName": "URL-Shortener"
 }
